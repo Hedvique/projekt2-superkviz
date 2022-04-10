@@ -1,7 +1,7 @@
 const otazky = [{
     poradiOtazky: "1.",
     otazka: "Ve kterém roce se konaly v norském Lillehammeru Zimní olmypijské hry?",
-    obrazek: "obrazky/lillehammer.jpg",
+    obrazek: 'obrazky/lillehammer.jpg',
     odpoved1: "1984",
     odpoved2: "1992",
     odpoved3: "1994",
@@ -9,7 +9,7 @@ const otazky = [{
 }, {
     poradiOtazky: "2.",
     otazka: "Ve kterém norském městě se nachází Nidaroský dóm, největší gotický chrám ve Skandinávii?",
-    obrazek: "obrazky/ovoce.jpg",
+    obrazek: "obrazky/nidaros.jpg",
     odpoved1: "Bergen",
     odpoved2: "Trondheim",
     odpoved3: "Oslo",
@@ -17,7 +17,7 @@ const otazky = [{
 }, {
     poradiOtazky: "3.",
     otazka: "Jak se nazývá tradiční norský rybí pokrm ze pstruha nebo sivena?",
-    obrazek: "obrazky/ovoce.jpg",
+    obrazek: "obrazky/jidlo.jpg",
     odpoved1: "Rakfisk",
     odpoved2: "Gravlaks",
     odpoved3: "Tørrfisk",
@@ -25,7 +25,7 @@ const otazky = [{
 }, {
     poradiOtazky: "4.",
     otazka: "Jak zní český překlad názvu slavného skalního útvaru Trolltunga v jižním Norsku?",
-    obrazek: "obrazky/ovoce.jpg",
+    obrazek: "obrazky/trolltunga.jpg",
     odpoved1: "Trolí ruka",
     odpoved2: "Trolí jazyk",
     odpoved3: "Trolí nos",
@@ -55,6 +55,7 @@ let i = 0
 function zobrazOtazku() {
     poradi.innerHTML = otazky[i].poradiOtazky
     otazka.innerHTML = otazky[i].otazka
+    obrazek.src = otazky[i].obrazek
     odpoved1.innerHTML = otazky[i].odpoved1
     odpoved2.innerHTML = otazky[i].odpoved2
     odpoved3.innerHTML = otazky[i].odpoved3
