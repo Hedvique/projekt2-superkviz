@@ -42,13 +42,37 @@ let moznosti = document.querySelector('#moznosti')
 let odpovedi = document.querySelector('#odpovedi')
 let vysledek = document.querySelector('.vysledek')
 
-let odpoved1 = document.createElement('li')
-let odpoved2 = document.createElement('li')
-let odpoved3 = document.createElement('li')
+let odpoved0 = document.querySelector('#odpoved0')
+let odpoved2 = document.querySelector('#odpoved2')
+let odpoved1 = document.querySelector('#odpoved1')
 
-odpovedi.appendChild(odpoved1)
-odpovedi.appendChild(odpoved2)
-odpovedi.appendChild(odpoved3)
+let otazka1Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka1Vyhodnoceni);
+let text1Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text1Vyhodnoceni);
+
+let otazka2Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka2Vyhodnoceni);
+let text2Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text2Vyhodnoceni);
+
+let otazka3Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka3Vyhodnoceni);
+let text3Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text3Vyhodnoceni);
+
+let otazka4Vyhodnoceni = document.createElement('h3');
+hodnoceni.appendChild(otazka4Vyhodnoceni);
+let text4Vyhodnoceni = document.createElement('p');
+hodnoceni.appendChild(text4Vyhodnoceni);
+
+let sumarizaceUspesnosti = document.createElement('h2');
+hodnoceni.appendChild(sumarizaceUspesnosti);
+
+let poleOdpovedi = [];
+let pocetSpravnychOdpovedi = 0;
+
+
 
 let i = 0
 
@@ -56,13 +80,12 @@ function zobrazOtazku() {
     poradi.innerHTML = otazky[i].poradiOtazky
     otazka.innerHTML = otazky[i].otazka
     obrazek.src = otazky[i].obrazek
-    odpoved1.innerHTML = otazky[i].odpoved1
-    odpoved2.innerHTML = otazky[i].odpoved2
-    odpoved3.innerHTML = otazky[i].odpoved3
+    odpoved0.innerHTML = otazky[i].odpoved1
+    odpoved1.innerHTML = otazky[i].odpoved2
+    odpoved2.innerHTML = otazky[i].odpoved3
 
 }
 
-function klikNaOdpoved() {
-    i++
-    zobrazOtazku()
-}
+let tlacitkaOdpovedi = document.querySelectorAll('li');
+
+
