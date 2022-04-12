@@ -83,9 +83,32 @@ function zobrazOtazku() {
     odpoved0.innerHTML = otazky[i].odpoved1
     odpoved1.innerHTML = otazky[i].odpoved2
     odpoved2.innerHTML = otazky[i].odpoved3
-
 }
 
 let tlacitkaOdpovedi = document.querySelectorAll('li');
 
+tlacitkaOdpovedi.forEach((tlacitko) => {
+    tlacitko.addEventListener('click', klikNaOdpoved);
+});
+
+function klikNaOdpoved(a) {
+    if (a.target.dataset.odpoved == 0) {
+        poleOdpovedi.push(otazky[i].odpoved1)
+    }
+    else if (a.target.dataset.odpoved == 1) {
+        poleOdpovedi.push(otazky[i].odpoved2)
+    }
+    else if (a.target.dataset.odpoved == 2) {
+        poleOdpovedi.push(otazky[i].odpoved3)
+    }
+
+    if (poleOdpovedi[i] == otazky[i].spravnaOdpoved) {
+        pocetSpravnychOdpovedi = pocetSpravnychOdpovedi + 1;
+    }
+
+    if (i + 1 < otazky.length) {
+        i++;
+        zobrazOtazku();
+    }
+}
 
