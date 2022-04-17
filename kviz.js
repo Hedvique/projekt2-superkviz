@@ -1,6 +1,6 @@
 const otazky = [{
     poradiOtazky: "1.",
-    otazka: "Ve kterém roce se konaly v norském Lillehammeru Zimní olmypijské hry?",
+    otazka: "Ve kterém roce se konaly v norském Lillehammeru Zimní olympijské hry?",
     obrazek: 'obrazky/lillehammer.jpg',
     odpoved1: "1984",
     odpoved2: "1992",
@@ -41,6 +41,7 @@ let obrazek = document.querySelector('#obrazek')
 let moznosti = document.querySelector('#moznosti')
 let odpovedi = document.querySelector('#odpovedi')
 let vysledek = document.querySelector('.vysledek')
+let hodnoceni = document.querySelector('#hodnoceni')
 
 let odpoved0 = document.querySelector('#odpoved0')
 let odpoved2 = document.querySelector('#odpoved2')
@@ -109,6 +110,46 @@ function klikNaOdpoved(a) {
     if (i + 1 < otazky.length) {
         i++;
         zobrazOtazku();
+    } else {
+        zobrazVyhodnoceni()
     }
+
+    function zobrazVyhodnoceni() {
+        kviz.style.display = 'none';
+        vysledek.style.display = 'block';
+        otazka1Vyhodnoceni.innerHTML = otazky[0].otazka;
+        otazka2Vyhodnoceni.innerHTML = otazky[1].otazka;
+        otazka3Vyhodnoceni.innerHTML = otazky[2].otazka;
+        otazka4Vyhodnoceni.innerHTML = otazky[3].otazka;
+
+        if (poleOdpovedi[0] == otazky[0].spravnaOdpoved) {
+            text1Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[0]}. <br>To je správně.`;
+        }
+        else {
+            text1Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[0]} <br>Správná odpověď je: ${otazky[0].spravnaOdpoved}`;
+        }
+        if (poleOdpovedi[1] == otazky[1].spravnaOdpoved) {
+            text2Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[1]} <br>To je správně.`;
+        }
+        else {
+            text2Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[1]} <br>Správná odpověď je: ${otazky[1].spravnaOdpoved}`;
+        }
+        if (poleOdpovedi[2] == otazky[2].spravnaOdpoved) {
+            text3Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[2]} <br>To je správně.`;
+        }
+        else {
+            text3Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[2]} <br>Správná odpověď je: ${otazky[2].spravnaOdpoved}`;
+        }
+        if (poleOdpovedi[3] == otazky[3].spravnaOdpoved) {
+            text4Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[3]} <br>To je správně.`;
+        }
+        else {
+            text4Vyhodnoceni.innerHTML = `Tvoje odpověď: ${poleOdpovedi[3]} <br>Správná odpověď je: ${otazky[3].spravnaOdpoved}`;
+        }
+    }
+
+    let skore = (pocetSpravnychOdpovedi / otazky.length) * 100;
+    sumarizaceUspesnosti.innerHTML = `Správně ${pocetSpravnychOdpovedi} ze  ${otazky.length} otázek. Úspěšnost je ${skore} %.`;
 }
+
 
